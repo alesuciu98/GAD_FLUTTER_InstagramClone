@@ -24,6 +24,7 @@ class _InstagramCloneState extends State<InstagramClone> with InitMixin<Instagra
       builder: (BuildContext context, AsyncSnapshot<Store<AppState>> snapshot) {
         if (snapshot.hasData) {
           final Store<AppState> store = snapshot.data;
+
           return StoreProvider<AppState>(
             store: store,
             child: MaterialApp(
@@ -36,12 +37,13 @@ class _InstagramCloneState extends State<InstagramClone> with InitMixin<Instagra
           if (snapshot.hasError) {
             throw snapshot.error;
           }
+
           return MaterialApp(
             title: 'Instagram clone',
             theme: ThemeData.dark(),
             home: const Scaffold(
               body: Center(
-                child: LinearProgressIndicator(),
+                child: CircularProgressIndicator(),
               ),
             ),
           );

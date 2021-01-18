@@ -19,7 +19,8 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'auth',
-      serializers.serialize(object.auth, specifiedType: const FullType(AuthState)),
+      serializers.serialize(object.auth,
+          specifiedType: const FullType(AuthState)),
     ];
 
     return result;
@@ -37,7 +38,8 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
       final dynamic value = iterator.current;
       switch (key) {
         case 'auth':
-          result.auth.replace(serializers.deserialize(value, specifiedType: const FullType(AuthState)) as AuthState);
+          result.auth.replace(serializers.deserialize(value,
+              specifiedType: const FullType(AuthState)) as AuthState);
           break;
       }
     }
@@ -50,7 +52,8 @@ class _$AppState extends AppState {
   @override
   final AuthState auth;
 
-  factory _$AppState([void Function(AppStateBuilder) updates]) => (new AppStateBuilder()..update(updates)).build();
+  factory _$AppState([void Function(AppStateBuilder) updates]) =>
+      (new AppStateBuilder()..update(updates)).build();
 
   _$AppState._({this.auth}) : super._() {
     if (auth == null) {
@@ -59,7 +62,8 @@ class _$AppState extends AppState {
   }
 
   @override
-  AppState rebuild(void Function(AppStateBuilder) updates) => (toBuilder()..update(updates)).build();
+  AppState rebuild(void Function(AppStateBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
 
   @override
   AppStateBuilder toBuilder() => new AppStateBuilder()..replace(this);
@@ -77,7 +81,8 @@ class _$AppState extends AppState {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('AppState')..add('auth', auth)).toString();
+    return (newBuiltValueToStringHelper('AppState')..add('auth', auth))
+        .toString();
   }
 }
 
@@ -122,7 +127,8 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
         _$failedField = 'auth';
         auth.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError('AppState', _$failedField, e.toString());
+        throw new BuiltValueNestedFieldError(
+            'AppState', _$failedField, e.toString());
       }
       rethrow;
     }

@@ -6,3 +6,4 @@ import 'package:instagram_clone/src/models/index.dart';
 import 'package:redux/redux.dart';
 
 part 'user_container.dart';
+part 'registration_info_container.dart';

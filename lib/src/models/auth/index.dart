@@ -9,3 +9,5 @@ part 'app_user.dart';
 part 'auth_state.dart';
 
 part 'index.g.dart';
+
+part 'registration_info.dart';
